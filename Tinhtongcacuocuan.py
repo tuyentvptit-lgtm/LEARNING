@@ -1,5 +1,6 @@
 #Tính số ước của n mà <n
 import math
+print('Hello world')
 def so_uoc(n):
     so_uoc = 0
     for i in range (1, math.isqrt(n) + 1):
