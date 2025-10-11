@@ -1,15 +1,12 @@
-#Tính số ước của n mà <n
-import math
-print('Hello world')
-def so_uoc(n):
-    so_uoc = 0
-    for i in range (1, math.isqrt(n) + 1):
-        if n %i == 0:
-            so_uoc += 2
-            if i == n//i:
-                so_uoc -= 1 
-    return so_uoc
+#UCLN, BCNN
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
 
-if __name__ == '__main__':
-    n = int(input('Nhap so n = '))
-    print('Số ước của n = ', so_uoc(n))
+def lcm(a, b):
+    x = a * b // gcd(a, b)
+    return x
+a, b = map(int, input().split())
+print('UCLN của a, b = ',gcd(a, b))
+print('BCNN của a, b = ', lcm(a, b))
