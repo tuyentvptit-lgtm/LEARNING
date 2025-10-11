@@ -1,4 +1,6 @@
 #UCLN, BCNN
+import math
+#math.factorial: giai thừa
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b
