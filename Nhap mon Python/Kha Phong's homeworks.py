@@ -1,5 +1,4 @@
-import math
 t = int(input())
-for i in range(1, t + 1):
-    n = int(input())
-    print(math.factorial(n))
+for _ in range(t):
+    n = input().strip()
+    print(sum(int(ch) for ch in n))
