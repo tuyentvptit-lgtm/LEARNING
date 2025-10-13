@@ -1,9 +1,8 @@
-a, b, c, k =  map(float, input().split())
-T = a + b + c
-if k == 1:
-    d = 0.75
-elif k == 2:
-    d = 0.5
-point = (30 - T)/7.5*d
-diem = round(point)
-print(diem)
+t = int(input())
+for i in range(t):
+    n = int(input())
+    tong = 0
+    while n > 0:
+        tong += n%10
+        n//=10
+    print(tong)
