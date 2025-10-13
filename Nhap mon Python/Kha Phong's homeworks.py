@@ -3,14 +3,11 @@
 t = int(input())
 for i in range(t):
     n = int(input())
-    chan = 0
-    le = 0
+    count = 0
+    d = 0
     while n > 0:
-        d = n % 10
-        if d % 2 == 0:
-            chan += 1
-        else:
-            le += 1
+        d += n % 10
+        if n > 0:
+            count += 1
         n //= 10
-    print(chan, le)
-   
+    print(count)
