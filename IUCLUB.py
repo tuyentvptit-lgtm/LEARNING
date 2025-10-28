@@ -20,6 +20,19 @@ def remove(s):
     for char in s:
         if char in 'aeiouAEIOU':
             a += char
+        else: 
+            print('No Vowel')
     return a
 
-#
+#Replace all 0's with 5
+
+def convertFive(n):
+    num = ''
+    for char in n:
+        num += n
+        if num == 0:
+            num += 5
+    return num
+
+n = input()
+print(convertFive(n))
