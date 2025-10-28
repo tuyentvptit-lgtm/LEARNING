@@ -25,14 +25,13 @@ def remove(s):
     return a
 
 #Replace all 0's with 5
-
-def convertFive(n):
-    num = ''
-    for char in n:
-        num += n
-        if num == 0:
-            num += 5
-    return num
-
-n = input()
-print(convertFive(n))
+class Solution:
+    def convertFive(self, n):
+        n = str(n)
+        num = ''
+        for ch in n:
+            if ch == '0':
+                num += '5'
+            else:
+                num += ch
+        return int(num)
