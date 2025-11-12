@@ -19,4 +19,7 @@ def tra_tu(dictionary):
 def them_tu(dictionary):
     while True:
         n = input('Nhap tu tieng Anh').strip().lower()
-        
+        if n in dictionary:
+            print('Tu nay da co trong tu dien')
+        else:
+            

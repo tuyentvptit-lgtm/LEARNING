@@ -1,9 +1,6 @@
-class Solution:
-    def bubbleSort(self,arr):
-        n = len(arr)
-        for i in range(n - 1):
-            for j in range(n - i - 1):
-                if arr[j] > arr[j + 1]:
-                    arr[j], arr[j + 1] = arr[j + 1], arr[j]  # hoán đổi
-        return arr
-
+n = list(map(int, input().split()))
+for i in range(len(n)):
+    for j in range(len(n)):
+        if n[i] < n[j]:
+            n[i], n[j] = n[j], n[i]
+print(n)
