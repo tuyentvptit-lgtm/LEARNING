@@ -1,18 +1,10 @@
-dict = {
-    'Hi': 'Chào',
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4
-}
-print(dict['Hi'])
-print(dict.get('one'))
-print(dict.get('ten', 10))
-print(dict.keys())
-print(dict.values())
-print(dict.items())
-school = {
-    'cl1': {'num': 45, 'male': 40},
-    'cl2': {'num': 50, 'female': 3}
-}
-print(school['cl1']['male'])
+tuple = (1, 2, 3, 4, 5, 6)
+print(tuple[2])
+print(tuple[0: 5: 2])
+nested_tuple = (1, 2, 3, 4,(5, 6, 7, 8), 9, 10)
+print(nested_tuple[3])
+print(nested_tuple[4][1])
+for i in tuple:
+    print (i)
+print(len(tuple))
+print(tuple.count(1))
