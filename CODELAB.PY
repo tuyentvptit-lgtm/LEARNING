@@ -1,18 +1,24 @@
 n = int(input())
-for i in range(n):
-    name = input()
+candidates = []
+for i in range(1, n+1):
+    name = input().strip()
     point_1 = float(input())
     point_2 = float(input())
-    if point_1 and point_2 > 10:
+    if point_1 > 10 and point_2 > 10:
         point_1 /= 10
         point_2 /= 10
-    avr = (point_1 + point_2)/2
+    avr = (point_1 + point_2) / 2
     if avr < 5:
         rank = 'TRUOT'
-    if 5 <= avr <8:
+    elif avr < 8:
         rank = 'CAN NHAC'
-    if 8 <= avr < 9.5:
+    elif avr < 9.5:
         rank = 'DAT'
-    if avr >= 9.5:
+    else:
         rank = 'XUAT SAC'
-    print('TS0',n,  name,   round(avr, 2), rank)
+    candidates.append((i, name, avr, rank))
+
+candidates.sort(key=lambda x: x[2], reverse=True)
+
+for idx, name, avr, rank in candidates:
+    print(f"TS{idx:02d} {name} {avr:.2f} {rank}")
