@@ -1,7 +1,10 @@
+m, x = map(int, input().split())
 n = list(map(int, input().split()))
-x = int(input())
 count = 0
-for i in range(len(n)):
-    for j in range(i, len(n)):
-        if sum(n[i:j+1]) == x:
-            count += 1  
+left = 0
+right = len(n) - 1
+for left in range(len(n)):
+    for right in range(left + 1, len(n) + 1):
+        if sum(n[left:right]) == x:
+            count += 1
+print(count) 
