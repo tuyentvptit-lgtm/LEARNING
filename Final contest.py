@@ -1,4 +1,8 @@
 arr = list(map(int, input().split()))
-for i in arr:
-    for j in arr:
-        if 1.i != j and 0 <= i and j < len(arr) and 3* arr[i] == 2 * arr[j]
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if arr[i] == 2* arr[j]:
+            print('true')
+            break
+        else:
+            print('false')
