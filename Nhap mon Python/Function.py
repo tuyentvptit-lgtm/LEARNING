@@ -1,20 +1,36 @@
-def xin_chao():
-    print('xin chao toi la ABC')
+import math
+def prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n%i == 0:
+            return False
+    return True
 
-def say_hello(name):
-    print('xin chao', name)
+def chan_le(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+    
+def min_max(n):
+    return min(n), max(n)
 
-def phep_toan(a, b):
-    print('tong = ', a + b)
+if __name__ == '__main__':
+    n = int(input())
+    if prime(n):
+        print(n, 'là snt')
+    else:
+        print(n, 'không là snt')
 
-def tham_so_mac_dinh(num = 10):
-    print('Hello')
-
-def tong(*number):
-    print(sum(number))
-
-xin_chao()
-say_hello('Duong')
-phep_toan(10, 22)
-tham_so_mac_dinh()
-tong(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    m = list(map(int, input().split()))
+    a, b = min_max(m)
+    print(a, b)
+    if chan_le(a):
+        print(a,'la so chan')
+    else:
+        print(a, 'la so le')
+    if chan_le(b):
+        print(b, 'la so chan')
+    else:
+        print(b, 'la so le')
