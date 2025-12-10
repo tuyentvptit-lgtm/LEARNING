@@ -1,14 +1,14 @@
-import math
-n = int(input())
-for i in range(n):
-    m = int(input())
-    tong = 0
-    result = m
-    while m > 0:
-        dvi = m % 10
-        tong += math.factorial(dvi) 
-        m //= 10
-    if tong == result:
-        print('Yes')
-    else:
-        print('No')
+sv = int(input())
+for i in range(sv):
+    msv= input()
+    name = input()
+    clas = input()
+for j in range(sv):
+    dihoc = input()
+    dck = 10
+    for k in dihoc:
+        if k == 'm':
+            dck -= 1
+        elif k == 'v':
+            dck -= 2
+    print(msv, name, clas, dck)
