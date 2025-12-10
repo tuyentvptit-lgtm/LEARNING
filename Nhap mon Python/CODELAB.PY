@@ -1,10 +1,14 @@
-a = list(map(int, input().split()))
-for i in range(len(a)):
-    if a[i] == 6:
-        if a[i] != 6 and a[i] != 8:
-            if a[i] != 8 and a[i + 2] != 8:
-                print('YES')
-            elif a[i] == 8 and a[i + 2] != 8:
-                print('YES')
+import math
+n = int(input())
+tong = 0
+for i in range(n):
+    m = input()
+    for j in m:
+        int(m)
+        dvi = m % 10
+        tong += math.factorial(m)
+        dvi // 10
+    if tong == m:
+        print('Yes')
     else:
-                print('NO')
+        print('No')
