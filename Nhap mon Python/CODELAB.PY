@@ -1,14 +1,8 @@
-sv = int(input())
-for i in range(sv):
-    msv= input()
-    name = input()
-    clas = input()
-for j in range(sv):
-    dihoc = input()
-    dck = 10
-    for k in dihoc:
-        if k == 'm':
-            dck -= 1
-        elif k == 'v':
-            dck -= 2
-    print(msv, name, clas, dck)
+n = int(input())
+a = list(map(int, input().split()))
+cnt = 0
+for i in range(1, len(a)):
+    if a[i] != a[i - 1]:
+        cnt += 1
+        print(a[i], cnt, end = '\n')
+print(cnt)
