@@ -1,8 +1,13 @@
 n = int(input())
-a = list(map(int, input().split()))
-cnt = 0
-for i in range(1, len(a)):
-    if a[i] != a[i - 1]:
-        cnt += 1
-        print(a[i], cnt, end = '\n')
-print(cnt)
+for i in range(n):
+    cnt = 0
+    a = list(map(int, input().split()))
+    for j in range(len(a) - 1):
+        if a[j] == a[j - 1]:
+            cnt += 1
+        else:
+            print(min(a), max(a))
+            break
+    if cnt != 0:
+        print('BANG NHAU')
+        break
