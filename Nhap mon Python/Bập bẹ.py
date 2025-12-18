@@ -1,8 +1,16 @@
-import os 
-import datetime
-today = datetime.date.today()
-folder_name = f"log_{today}"
-if not os.path.exists(folder_name):
-    os.mkdir(folder_name)
-current_dir = os.getcwd()
-print(current_dir)
+import tkinter as tk
+
+root = tk.Tk()
+def show_text():
+    print(entry.get())
+    
+text = tk.Text(root, height=5, width=30)
+text.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+btn = tk.Button(root, text="Lấy dữ liệu", command=show_text)
+btn.pack()
+
+root.mainloop()
