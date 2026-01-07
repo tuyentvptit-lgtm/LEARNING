@@ -1,6 +1,14 @@
-a = int(input())
-b = int(input())
-c = int(input())
-mx = max(a, b, c)
-mn = min(a, b, c)
-print(mx, mn)   
+a = list(map(int, input().split()))
+chan = []
+so = ''
+tong = 0
+for i in a:
+    if i % 2 == 0:
+        chan.append(i)
+        tong += i
+for i in chan:
+    so += str(i) + ' '
+print(so)
+print(tong)
+avr = tong / len(chan)
+print(round(avr, 2))
