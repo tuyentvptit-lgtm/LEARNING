@@ -5,5 +5,5 @@ mang.forEach((Element, index, array) =>{ //không trả về mảng mới, khôn
 
 //map(): tạo mảng mới = cách tùy chỉnh mảng khác
 let a = mang.map((e, i) => {
-    e = e + 1
+     return e = e + 1
 })
