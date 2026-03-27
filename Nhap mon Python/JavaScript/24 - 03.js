@@ -7,3 +7,10 @@ mang.forEach((Element, index, array) =>{ //không trả về mảng mới, khôn
 let a = mang.map((e, i) => {
      return e = e + 1
 })
+
+//filter(): tạo mảng mới dựa trên các items từ bảng cũ qua 1 số điều kiện nhất định
+let b = mang.filter((e, i) => {
+    // Điều kiện ở đây
+    if(e > 2)
+    return True //Luôn return ra True or False
+})
