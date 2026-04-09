@@ -1,2 +1,2 @@
-a = list(map(int, input().split()))
-print(set(a))
+a, b = list(map(int, input().split()))
+print(a + b)

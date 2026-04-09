@@ -1,0 +1,11 @@
+body {
+    background-color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+h1{
+    color: navy;
+    text-align: center;
+    background-color: beige;
+}
