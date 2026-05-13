@@ -14,3 +14,7 @@ let b = mang.filter((e, i) => {
     if(e > 2)
     return True //Luôn return ra True or False
 })
+let tuoi = 18
+if (tuoi >= 18){
+    console.log ('du tuoi di tu');
+}
