@@ -1,6 +1,328 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f1a;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Header */
+.site-header {
+  background-color: #1a1a2e;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo span {
+  color: #7f77dd;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+/* Sections dùng chung */
+.section-about,
+.section-skills {
+  padding: 4rem 2rem;
+  border-bottom: 0.5px solid #1e1e3a;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #7f77dd;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* About Me */
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #2a2a4a;
+  color: #7f77dd;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-text h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+/* Skills */
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  background-color: #1e1e3a;
+  color: #afa9ec;
+  border: 0.5px solid #534ab7;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0a0a15;
+}
+
+.site-footer p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: #7f77dd;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==================
+   TRANG PROJECTS
+   ================== */
+
+.projects-page {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tiêu đề trang */
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h1 span {
+  color: #7f77dd;
+}
+
+.section-heading p {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* Thanh nút lọc */
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  border: 0.5px solid #2a2a4a;
+  background: transparent;
+  color: #aaa;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #7f77dd;
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: #7f77dd;
+  border-color: #7f77dd;
+  color: #fff;
+}
+
+/* ==================
+   CSS GRID — PHẦN QUAN TRỌNG NHẤT
+   ================== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+  gap: 1.5rem;                           /* khoảng cách giữa card */
+}
+
+/* ==================
+   PROJECT CARD
+   ================== */
+
+.project-card {
+  background-color: #1a1a2e;
+  border: 0.5px solid #2a2a4a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.project-card:hover {
+  border-color: #7f77dd;
+  transform: translateY(-4px); /* nhấc lên nhẹ khi hover */
+}
+
+/* Phần ảnh thumbnail */
+.card-thumbnail {
+  height: 120px;
+  background-color: #0d0d20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid #2a2a4a;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+/* Nội dung card */
+.card-body {
+  padding: 1rem 1.25rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Tag công nghệ */
+.card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.tag-html { background: #2a1a0a; color: #EF9F27; border: 0.5px solid #633806; }
+.tag-css  { background: #1e1e3a; color: #afa9ec; border: 0.5px solid #534ab7; }
+.tag-js   { background: #0a2a0a; color: #97C459; border: 0.5px solid #3B6D11; }
+
+/* Nút Demo và GitHub */
+.card-links {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-demo,
+.btn-github {
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-demo {
+  background: #7f77dd;
+  color: #fff;
+}
+
+.btn-github {
+  border: 0.5px solid #534ab7;
+  color: #afa9ec;
+}
+
+.btn-demo:hover,
+.btn-github:hover {
+  opacity: 0.8;
+}
+
+/* Responsive — 2 cột trên tablet, 1 cột trên mobile */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
