@@ -149,5 +149,20 @@ h2::after {
 
 /* ==================
    TRANG PROJECTS
-   ================== *
-   
+   ==================*/
+
+.projects-page {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}

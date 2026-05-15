@@ -1,109 +1,104 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — TuyenDev</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - TuyenChun</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <header class="site-header">
+        <div class="logo">Tuyen<span>Dev</span></div>
 
-  <header class="site-header">
-    <div class="logo">Tuyen<span>Dev</span></div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="projects-page">
-
-    <div class="section-heading">
-      <h1>Dự án <span>của tôi</span></h1>
-      <p>Những gì tôi đã xây dựng trong hành trình học lập trình</p>
-    </div>
-
-    <!-- Nút lọc theo tag — JS sẽ xử lý sau, giờ chỉ cần HTML -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">Tất cả</button>
-      <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
-      <button class="filter-btn" data-filter="javascript">JavaScript</button>
-    </div>
-
-    <!-- Đây là lưới card — CSS Grid sẽ xử lý layout -->
-    <div class="project-grid">
-
-      <div class="project-card" data-tags="html-css">
-        <div class="card-thumbnail">
-          <div class="card-icon">&#128196;</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="project-page">
+        <div class="section-heading">
+            <h1>My<span>Project</span></h1>
+            <p>Every things I did in my journey</p>
         </div>
-        <div class="card-body">
-          <h3 class="card-title">Portfolio cá nhân</h3>
-          <p class="card-desc">Trang web giới thiệu bản thân, xây dựng bằng HTML và CSS thuần.</p>
-          <div class="card-tags">
-            <span class="tag tag-html">HTML</span>
-            <span class="tag tag-css">CSS</span>
-          </div>
-          <div class="card-links">
-            <a href="#" class="btn-demo">Demo</a>
-            <a href="#" class="btn-github">GitHub</a>
-          </div>
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
+            <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+            <button class="filter-btn" data-filter="javascript">JS</button>
         </div>
-      </div>
+        
+        <!-- LƯỚI CARD -->
+        <div class="project-grid">
+            <!-- CARD 1 -->
+            <div class="project-card" data-tags="html-css">
+                <div class="card-thumbnail">
+                    <div class="card-icon">📄</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Project</h3>
+                    <p class="card-desc">Some project.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-html">HTML</span>
+                        <span class="tag tag-css">CSS</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn-demo">Demo</a>
+                        <a href="#" class="btn-Github">GitHub</a>
+                    </div>
+                </div>
+            </div>
 
-      <div class="project-card" data-tags="html-css javascript">
-        <div class="card-thumbnail">
-          <div class="card-icon">&#9989;</div>
+            <!-- CARD 2 -->
+            <div class="project-card" data-tags="html-css javascript">
+                <div class="card-thumbnail">
+                    <div class="card-icon">✔️</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Todo List App</h3>
+                    <p class="card-desc">Jobs management with JavaScript DOM.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-html">HTML</span>
+                        <span class="tag tag-css">CSS</span>
+                        <span class="tag tag-js">JavaScript</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn-demo">Demo</a>
+                        <a href="#" class="btn-Github">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 3 -->
+            <div class="project-card" data-tags="javascript css">
+                <div class="card-thumbnail">
+                    <div class="card-icon">🌦️</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Weather App</h3>
+                    <p class="card-desc">Watch weather using API and Fetch.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-css">CSS</span>
+                        <span class="tag tag-js">JavaScript</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn-demo">Demo</a>
+                        <a href="#" class="btn-Github">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-          <h3 class="card-title">Todo List App</h3>
-          <p class="card-desc">Ứng dụng quản lý công việc, thêm/xóa task bằng JavaScript DOM.</p>
-          <div class="card-tags">
-            <span class="tag tag-html">HTML</span>
-            <span class="tag tag-css">CSS</span>
-            <span class="tag tag-js">JS</span>
-          </div>
-          <div class="card-links">
-            <a href="#" class="btn-demo">Demo</a>
-            <a href="#" class="btn-github">GitHub</a>
-          </div>
+
+
+    </main>
+     <footer class="site-footer">
+        <p>© 2026 Tuyen Dev</p>
+        <div class="footer-links">
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="mailto:email@gmail.com">Email</a>
         </div>
-      </div>
-
-      <div class="project-card" data-tags="javascript">
-        <div class="card-thumbnail">
-          <div class="card-icon">&#127774;</div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Weather App</h3>
-          <p class="card-desc">Xem thời tiết theo thành phố, dùng Fetch API để lấy dữ liệu thực.</p>
-          <div class="card-tags">
-            <span class="tag tag-js">JS</span>
-            <span class="tag tag-css">CSS</span>
-          </div>
-          <div class="card-links">
-            <a href="#" class="btn-demo">Demo</a>
-            <a href="#" class="btn-github">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 Tuyen Dev</p>
-    <div class="footer-links">
-      <a href="https://github.com/" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="mailto:email@gmail.com">Email</a>
-    </div>
-  </footer>
-
+    </footer>
 </body>
 </html>
