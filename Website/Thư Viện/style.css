@@ -80,7 +80,7 @@
     }
  
     input:focus {
-      border-color: #c8a96e; /* viền vàng khi đang gõ */
+      border-color: #c8a96e;
     }
  
     /* Nút Thêm sách */
@@ -97,10 +97,10 @@
     }
  
     #btnThem:hover {
-      background: #4a3c28; /* sáng hơn khi hover */
+      background: #4a3c28;
     }
  
-    /* ===== THỐNG KÊ (2 ô nhỏ) ===== */
+    /* ===== THỐNG KÊ ===== */
     .stats {
       display: flex;
       gap: 8px;
@@ -209,14 +209,12 @@
       color: #a89070;
       font-size: 13px;
     }
- 
-    /* Thông báo lỗi / thành công */
-    #thongBao {
+     #thongBao {
       margin-top: 10px;
       padding: 8px 12px;
       border-radius: 6px;
       font-size: 13px;
-      display: none; /* ẩn mặc định, JS sẽ hiện */
+      display: none;
     }
  
     .tb-loi {
