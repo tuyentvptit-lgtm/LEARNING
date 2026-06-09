@@ -51,17 +51,31 @@ function hienThiDanhSach(mangSach) {
   for (let i = 0; i < mangSach.length; i++) {
     let s = mangSach[i];
     html += `
-      <tr>
-        <td style="color:#a89070">${i + 1}</td>
-        <td style="font-weight:500">${s.ten}</td>
-        <td>${s.tacGia}</td>
-        <td><span class="badge">${s.theLoai}</span></td>
-        <td>${s.nam}</td>
-        <td>
-          <button class="btn-xoa" onclick="xoaSach(${s.id})">🗑 Xóa</button>
-        </td>
-      </tr>
-    `;
+        <tr>
+          <td style="color:#a89070">${i + 1}</td>
+          <td style="font-weight:500">${s.ten}</td>
+          <td>${s.tacGia}</td>
+          <td><span class="badge">${s.theLoai}</span></td>
+          <td>${s.nam}</td>
+          <td>
+            ${s.trangThai === "san-sang"
+              ? `<span class="badge-san-sang">✅ Sẵn sàng</span>`
+              : `<span class="badge-dang-muon">📖 Đang mượn<br>
+                <small style="font-size:10px; color:#a89070">
+                  ${s.nguoiMuon} · ${s.ngayMuon}
+                </small></span>`
+            }
+          </td>
+          <td style="display:flex; gap:6px; align-items:center;">
+            ${s.trangThai === "san-sang"
+              ? `<button class="btn-xoa" style="color:#2e7d32;"
+                        onclick="moModalMuon(${s.id})">📖 Mượn</button>`
+              : `<button class="btn-xoa" style="color:#1565c0;"
+                        onclick="traSach(${s.id})">↩ Trả</button>`
+            }
+            <button class="btn-xoa" onclick="xoaSach(${s.id})">🗑 Xóa</button>
+          </td>
+        </tr>`;
   }
   bang.innerHTML = html;
 }
@@ -104,8 +118,6 @@ document.getElementById("btnThem").addEventListener("click", themSach);
 // ===========================
 // DỮ LIỆU
 // ===========================
-let danhSachSach = [];
-let idTiepTheo = 1;
 
 
 // ===========================
@@ -130,7 +142,10 @@ function themSach() {
     ten: ten,
     tacGia: tacGia,
     theLoai: theLoai,
-    nam: nam
+    nam: nam,
+    trangThai: "san-sang",
+    nguoiMuon: "",
+    ngayMuon: ""      
   };
 
   // Bước 4: Thêm vào mảng + tăng id
@@ -266,7 +281,80 @@ function hienThongBao(noiDung, loai) {
   }, 3000);
 }
 
+// ===========================
+// HÀM 8: Mở modal mượn sách
+// ===========================
+let idDangMuon = null; // lưu id sách đang chờ xác nhận
 
+function moModalMuon(id) {
+  idDangMuon = id;
+
+  // Điền ngày hôm nay tự động
+  let homNay = new Date().toISOString().split("T")[0];
+  document.getElementById("inputNgayMuon").value = homNay;
+  document.getElementById("inputNguoiMuon").value = "";
+
+  // Hiện modal
+  let modal = document.getElementById("modalMuon");
+  modal.style.display = "flex";
+}
+
+
+// ===========================
+// HÀM 9: Xác nhận mượn sách
+// ===========================
+function xacNhanMuon() {
+  let nguoiMuon = document.getElementById("inputNguoiMuon").value.trim();
+  let ngayMuon  = document.getElementById("inputNgayMuon").value;
+
+  if (nguoiMuon === "" || ngayMuon === "") {
+    alert("Vui lòng điền tên người mượn và ngày mượn!");
+    return;
+  }
+
+  // Tìm sách theo id và cập nhật trạng thái
+  for (let i = 0; i < danhSachSach.length; i++) {
+    if (danhSachSach[i].id === idDangMuon) {
+      danhSachSach[i].trangThai = "dang-muon";
+      danhSachSach[i].nguoiMuon = nguoiMuon;
+      danhSachSach[i].ngayMuon  = ngayMuon;
+      break;
+    }
+  }
+
+  dongModal();
+  hienThiDanhSach(danhSachSach);
+  capNhatThongKe();
+  hienThongBao(`Đã ghi nhận "${nguoiMuon}" mượn sách!`, "ok");
+}
+
+
+// ===========================
+// HÀM 10: Trả sách
+// ===========================
+function traSach(id) {
+  for (let i = 0; i < danhSachSach.length; i++) {
+    if (danhSachSach[i].id === id) {
+      danhSachSach[i].trangThai = "san-sang";
+      danhSachSach[i].nguoiMuon = "";
+      danhSachSach[i].ngayMuon  = "";
+      break;
+    }
+  }
+
+  hienThiDanhSach(danhSachSach);
+  capNhatThongKe();
+  hienThongBao("Đã trả sách thành công!", "ok");
+}
+
+
+// ===========================
+// HÀM 11: Đóng modal
+// ===========================
+function dongModal() {
+  document.getElementById("modalMuon").style.display = "none";
+  idDangMuon = null;
+}
 // ===========================
 // GẮN SỰ KIỆN
 // ===========================
