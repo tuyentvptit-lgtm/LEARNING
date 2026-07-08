@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiMS - Tên trang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ============================== -->
+<!-- NAVBAR - giữ nguyên, không sửa -->
+<!-- ============================== -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            <i class="fa-solid fa-book-open"></i>
+            LiMS
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+            <li><a href="books.html"><i class="fa-solid fa-book"></i> Sách</a></li>
+            <li><a href="readers.html"><i class="fa-solid fa-user-group"></i> Độc giả</a></li>
+            <li><a href="borrow.html"><i class="fa-solid fa-right-left"></i> Mượn / Trả</a></li>
+            <li><a href="reports.html"><i class="fa-solid fa-chart-column"></i> Báo cáo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- ============================== -->
+    <!-- PAGE HEADER - đổi tiêu đề + mô tả cho từng trang -->
+    <!-- ============================== -->
+    <div class="page-header">
+        <h1>Sách</h1>
+        <p>Tất cả sách trong thư viện hiện nay</p>
+    </div>
+
+    <!-- ============================== -->
+    <!-- NỘI DUNG CHÍNH - thay đổi tùy trang -->
+    <!-- Ví dụ: toolbar, filter-bar, table, form... -->
+    <!-- ============================== -->
+    <div class="toolbar">
+        <!-- ví dụ: <a href="add-book.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</a> -->
+         <a href="add-book.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</a>
+    </div>
+
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="Tìm sách"
+            style="padding:10px 12px; border:1px solid var(--border); border-radius:4px; flex:1;">
+        <select id="statusFilter" style="padding:10px 12px; border:1px solid var(--border); border-radius:4px;">
+            <option value="all">Tất cả trạng thái</option>
+            <option value="con_hang">Còn hàng</option>
+            <option value="het_hang">Hết hàng</option>
+        </select>
+    </div>
+
+    <!-- Đặt bảng, form, hoặc nội dung riêng của từng trang ở đây -->
+    <div class="table-responsive">
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tên sách</th>
+                    <th>Tác giả</th>
+                    <th>Thể loại</th>
+                    <th>Số lượng</th>
+                    <th>Trạng thái</th>
+                    <th class="text-center">Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="bookTableBody">
+                <!-- JS sẽ tự điền vào đây -->
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phân trang -->
+     <div class="pagination">
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-left"></i></button>
+        <span class="text-muted">Trang 1 / 1</span>
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-right"></i></button>
+     </div>
+</div>
+
+<!-- ============================== -->
+<!-- FOOTER - giữ nguyên, không sửa -->
+<!-- ============================== -->
+<footer class="footer">
+    <p>&copy; 2026 LiMS - Library Management System. Đồ án cá nhân.</p>
+</footer>
+
+<!-- ============================== -->
+<!-- SCRIPT - đổi tên file JS theo từng trang -->
+<!-- Ví dụ trang sách: mockData.js + books.js -->
+<!-- Ví dụ trang độc giả: mockData.js + readers.js -->
+<!-- ============================== -->
+<script src="js/mockData.js"></script>
+<script src="js/ten-trang.js"></script>
+
+</body>
+</html>

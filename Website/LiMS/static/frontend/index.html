@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiMS - Library Management System</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            <i class="fa-solid fa-book-open"></i>
+            LiMS
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+            <li><a href="books.html"><i class="fa-solid fa-book"></i> Sách</a></li>
+            <li><a href="readers.html"><i class="fa-solid fa-user-group"></i> Độc giả</a></li>
+            <li><a href="borrow.html"><i class="fa-solid fa-right-left"></i> Mượn / Trả</a></li>
+            <li><a href="reports.html"><i class="fa-solid fa-chart-column"></i> Báo cáo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Tổng quan thư viện</h1>
+        <p>Chào mừng trở lại! Đây là tình hình thư viện của bạn hôm nay.</p>
+    </div>
+
+    <!-- Alert -->
+    <div class="alert alert-warning">
+        <span><i class="fa-solid fa-triangle-exclamation"></i> Có 5 phiếu mượn đã quá hạn trả. <a href="borrow.html">Xem chi tiết</a></span>
+        <button class="alert-close">&times;</button>
+    </div>
+
+    <!-- Dashboard Stats -->
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-book" style="color: var(--primary);"></i></div>
+            <div class="stat-content">
+                <h3>1,248</h3>
+                <p>Tổng số đầu sách</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-user-group" style="color: var(--info);"></i></div>
+            <div class="stat-content">
+                <h3>356</h3>
+                <p>Độc giả đang hoạt động</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--success);"></i></div>
+            <div class="stat-content">
+                <h3>87</h3>
+                <p>Sách đang được mượn</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-clock" style="color: var(--danger);"></i></div>
+            <div class="stat-content">
+                <h3>5</h3>
+                <p>Phiếu mượn quá hạn</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <a href="add-book.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm sách mới</a>
+        <a href="add-reader.html" class="btn btn-success"><i class="fa-solid fa-user-plus"></i> Thêm độc giả</a>
+        <a href="borrow.html" class="btn btn-info"><i class="fa-solid fa-hand-holding-hand"></i> Lập phiếu mượn</a>
+    </div>
+
+    <!-- Recent Borrow Table -->
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mã phiếu</th>
+                    <th>Tên sách</th>
+                    <th>Độc giả</th>
+                    <th>Ngày mượn</th>
+                    <th>Hạn trả</th>
+                    <th>Trạng thái</th>
+                    <th class="text-center">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PM0001</td>
+                    <td>Lập trình hướng đối tượng với Java</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>01/07/2026</td>
+                    <td>15/07/2026</td>
+                    <td><span class="badge badge-success">Đang mượn</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i> Trả sách</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PM0002</td>
+                    <td>Cấu trúc dữ liệu và giải thuật</td>
+                    <td>Trần Thị B</td>
+                    <td>20/06/2026</td>
+                    <td>04/07/2026</td>
+                    <td><span class="badge badge-danger">Quá hạn</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-bell"></i> Nhắc trả</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PM0003</td>
+                    <td>Cơ sở dữ liệu SQL căn bản</td>
+                    <td>Lê Văn C</td>
+                    <td>05/07/2026</td>
+                    <td>19/07/2026</td>
+                    <td><span class="badge badge-info">Mới tạo</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-warning"><i class="fa-solid fa-pen"></i> Sửa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-left"></i></button>
+        <span class="text-muted">Trang 1 / 12</span>
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <h2>Thao tác nhanh</h2>
+        <div class="action-buttons">
+            <a href="add-book.html" class="btn btn-primary">
+                <i class="fa-solid fa-book-medical"></i><br>
+                Thêm sách mới
+            </a>
+            <a href="add-reader.html" class="btn btn-success">
+                <i class="fa-solid fa-user-plus"></i><br>
+                Đăng ký độc giả
+            </a>
+            <a href="borrow.html" class="btn btn-info">
+                <i class="fa-solid fa-right-left"></i><br>
+                Lập phiếu mượn/trả
+            </a>
+            <a href="reports.html" class="btn btn-warning">
+                <i class="fa-solid fa-file-lines"></i><br>
+                Xuất báo cáo
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2026 LiMS - Library Management System. Đồ án cá nhân.</p>
+</footer>
+
+</body>
+</html>
