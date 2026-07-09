@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiMS - Tên trang</title>
+    <title>LiMS - Thêm sách</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -34,8 +34,8 @@
     <!-- PAGE HEADER - đổi tiêu đề + mô tả cho từng trang -->
     <!-- ============================== -->
     <div class="page-header">
-        <h1>Tiêu đề trang</h1>
-        <p>Mô tả ngắn gọn nội dung trang này</p>
+        <h1>Thêm sách mới</h1>
+        <p>Thêm đầy đủ thông tin sách mới vào thư viện</p>
     </div>
 
     <!-- ============================== -->
@@ -46,7 +46,35 @@
         <!-- ví dụ: <a href="add-book.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</a> -->
     </div>
 
-    <!-- Đặt bảng, form, hoặc nội dung riêng của từng trang ở đây -->
+    <form id="addBookForm">
+        <div class="form-container">
+            <div class="form-row">
+                <div>
+                    <label for="tenSach">Tên sách</label>
+                    <input id="tenSach" name="tenSach" type="text" required>
+                </div>
+                <div>
+                    <label for="tacGia">Tên tác giả</label>
+                    <input id="tacGia" name="tacGia" type="text" required>
+                </div>
+                <div>
+                    <label for="theLoai">Thể loại</label>
+                    <input id="theLoai" name="theLoai" type="text">
+                </div>
+                <div>
+                    <label for="namXuatBan">Năm xuất bản</label>
+                    <input id="namXuatBan" name="namXuatBan" type="number" min="1800" max="3000">
+                </div>
+                <div>
+                    <label for="soLuong">Tổng số bản</label>
+                    <input id="soLuong" name="soLuong" type="number" min="1" required>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu sách</button>
+        <a href="books.html" class="btn btn-secondary">Huỷ</a>
+    </form>
 
 </div>
 
@@ -63,7 +91,7 @@
 <!-- Ví dụ trang độc giả: mockData.js + readers.js -->
 <!-- ============================== -->
 <script src="js/mockData.js"></script>
-<script src="js/ten-trang.js"></script>
+<script src="js/add-book.js"></script>
 
 </body>
 </html>
