@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiMS - Tên trang</title>
+    <title>LiMS - Độc giả</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -38,17 +38,49 @@
         <p>Danh sách độc giả của thư viện</p>
     </div>
 
+    <div class="toolbar">
+        <a href="add-reader.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</a>
+    </div>
     <!-- ============================== -->
     <!-- NỘI DUNG CHÍNH - thay đổi tùy trang -->
     <!-- Ví dụ: toolbar, filter-bar, table, form... -->
     <!-- ============================== -->
-    <div class="toolbar">
-        <!-- ví dụ: <a href="add-book.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</a> -->
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="Tìm độc giả"
+            style="padding:10px 12px; border:1px solid var(--border); border-radius:4px; flex:1;">
+        <select id="statusFilter" style="padding:10px 12px; border:1px solid var(--border); border-radius:4px;">
+            <option value="all">Tất cả trạng thái</option>
+            <option value="hoat_dong">Hoạt động</option>
+            <option value="bi_khoa">Bị khoá</option>
+        </select>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>SĐT</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Trạng thái</th>
+                    <th class="text-center">Sửa/Xoá</th>
+                </tr>
+            </thead>
+            <tbody id="readerTableBody">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="pagination">
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-left"></i></button>
+        <span class="text-muted">Trang 1 / 1</span>
+        <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
-    <!-- Đặt bảng, form, hoặc nội dung riêng của từng trang ở đây -->
-
 </div>
+
 
 <!-- ============================== -->
 <!-- FOOTER - giữ nguyên, không sửa -->
@@ -63,7 +95,7 @@
 <!-- Ví dụ trang độc giả: mockData.js + readers.js -->
 <!-- ============================== -->
 <script src="js/mockData.js"></script>
-<script src="js/ten-trang.js"></script>
+<script src="js/readers.js"></script>
 
 </body>
 </html>

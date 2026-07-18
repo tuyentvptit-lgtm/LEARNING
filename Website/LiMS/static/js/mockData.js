@@ -59,7 +59,6 @@ const mockReaders = [
         hoTen: "Nguyễn Văn A",
         email: "vana@gmail.com",
         soDienThoai: "0987654321",
-        lop: "D22CQCN01",
         ngayDangKy: "2026-01-15",
         trangThai: "hoat_dong" // hoat_dong | bi_khoa
     },
@@ -68,7 +67,6 @@ const mockReaders = [
         hoTen: "Trần Thị B",
         email: "tranb@gmail.com",
         soDienThoai: "0912345678",
-        lop: "D22CQCN02",
         ngayDangKy: "2026-02-20",
         trangThai: "hoat_dong"
     },
@@ -77,7 +75,6 @@ const mockReaders = [
         hoTen: "Lê Văn C",
         email: "levanc@gmail.com",
         soDienThoai: "0977123456",
-        lop: "D22CQCN01",
         ngayDangKy: "2026-03-05",
         trangThai: "bi_khoa"
     }
